@@ -1,1 +1,1 @@
-Reproduce the SSD paper in Torch
+Reproduce the SSD paper in Torch7.
