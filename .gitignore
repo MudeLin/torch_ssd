@@ -1,0 +1,7 @@
+./data/*
+*.jpg
+*.tar.gz
+*.t7
+*.h5
+*.tar
+*.zip
