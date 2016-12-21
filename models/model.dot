@@ -1,0 +1,310 @@
+digraph G {
+	graph [bb="0,0,4316,5054"];
+	node [label="\N",
+		shape=oval
+	];
+	n1	 [height=1.6303,
+		label="Node1\ninput = {torch.CudaTensor[3x17328],torch.CudaTensor[3x8664],torch.CudaTensor[3x2400],torch.CudaTensor[3x600],torch.CudaTensor[\
+3x216],torch.CudaTensor[3x24]}\lmodule = nn.JoinTable\lreverseMap = {}\lmapindex = {Node5,Node6,Node7,Node8,Node9,Node10}",
+		pos="2089,851",
+		tooltip="[VGG_SSD.lua]:138_",
+		width=18.73];
+	n2	 [height=1.3356,
+		label="Node2\ninput = {torch.CudaTensor[3x29232],torch.CudaTensor[3x153468],torch.CudaTensor[1x2x29232]NaN}\lmapindex = {Node1,Node3,Node4}\lreverseMap = {}",
+		pos="2089,48",
+		tooltip="[[C]]:-1_",
+		width=11.539];
+	n1 -> n2	 [pos="e,2089,96.331 2089,792.22 2089,736.96 2089,651.29 2089,577 2089,577 2089,577 2089,311 2089,240.64 2089,159.65 2089,106.56"];
+	n3	 [height=1.3356,
+		label="Node3\ninput = {torch.CudaTensor[3x7308x21]}\lmodule = nn.View(-1)\lreverseMap = {}",
+		pos="1817,180",
+		tooltip="[VGG_SSD.lua]:144_",
+		width=4.728];
+	n3 -> n2	 [pos="e,1993.1,94.838 1902.3,138.22 1928.2,125.85 1957,112.1 1984,99.185"];
+	n4	 [height=1.6303,
+		label="Node4\ninput = {torch.CudaTensor[1x2x17328],torch.CudaTensor[1x2x8664],torch.CudaTensor[1x2x2400]NaN,torch.CudaTensor[1x2x600]NaN,\
+torch.CudaTensor[1x2x216],torch.CudaTensor[1x2x24]}\lmodule = nn.JoinTable\lreverseMap = {}\lmapindex = {Node12,Node13,Node14,Node15,\
+Node16,Node17}",
+		pos="3549,851",
+		tooltip="[VGG_SSD.lua]:151_",
+		width=21.318];
+	n4 -> n2	 [pos="e,2334,86.894 3271.1,796.29 3071.6,749.52 2838,674.02 2838,577 2838,577 2838,577 2838,311 2838,203.77 2561,130.07 2344,88.775"];
+	n5	 [height=2.8088,
+		label="Node5\ninput = {torch.CudaTensor[3x512x38x38]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+512 -> 12, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1304,2942",
+		tooltip="[VGG_SSD.lua]:93_",
+		width=6.4533];
+	n5 -> n1	 [pos="e,1597.7,891.25 1262,2842.2 1231.1,2764.4 1191.5,2652.3 1173,2550 1128.5,2303.6 1154,2237.4 1154,1987 1154,1987 1154,1987 1154,1284 \
+1154,1132.5 1089.6,1051.8 1198,946 1213.9,930.46 1393.7,910.03 1587.6,892.18"];
+	n6	 [height=2.8088,
+		label="Node6\ninput = {torch.CudaTensor[3x1024x19x19]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+1024 -> 24, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1923,2374",
+		tooltip="[VGG_SSD.lua]:106_",
+		width=6.5915];
+	n6 -> n1	 [pos="e,1536.3,884.67 1821.6,2282.5 1779.5,2250.1 1728.2,2217 1676,2198 1582.5,2164 1299.8,2232.8 1230,2162 1141.9,2072.8 1192,1724.4 \
+1192,1599 1192,1599 1192,1599 1192,1284 1192,1120.4 1207.1,1044.2 1338,946 1373.7,919.21 1443.3,900.02 1526.4,886.28"];
+	n7	 [height=2.8088,
+		label="Node7\ninput = {torch.CudaTensor[3x512x10x10]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+512 -> 24, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="2488,1986",
+		tooltip="[VGG_SSD.lua]:113_",
+		width=6.4533];
+	n7 -> n1	 [pos="e,2316,906.4 2601.9,1897.8 2637.8,1863.6 2672.9,1821.1 2692,1774 2741.2,1652.5 2748.1,1302 2691,1184 2622.1,1041.6 2463.1,957.62 \
+2325.8,909.78"];
+	n8	 [height=2.8088,
+		label="Node8\ninput = {torch.CudaTensor[3x256x5x5]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 24, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1946,1598",
+		tooltip="[VGG_SSD.lua]:120_",
+		width=6.4533];
+	n8 -> n1	 [pos="e,1594.5,890.92 1846.1,1506.6 1805,1474.5 1755,1441.4 1704,1422 1630.5,1394 1404.7,1444.4 1352,1386 1338.1,1370.6 1338.3,962.65 \
+1353,946 1372.1,924.4 1467.8,906.42 1584.3,892.16"];
+	n9	 [height=2.8088,
+		label="Node9\ninput = {torch.CudaTensor[3x256x3x3]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 24, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="2450,1285",
+		tooltip="[VGG_SSD.lua]:127_",
+		width=6.4533];
+	n9 -> n1	 [pos="e,2279.2,907.36 2437.1,1183.9 2422.7,1109.6 2392.5,1010.5 2330,946 2317.6,933.21 2303.3,922.13 2287.9,912.54"];
+	n10	 [height=2.8088,
+		label="Node10\ninput = {torch.CudaTensor[3x256x1x1]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 24, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="2089,1047",
+		tooltip="[VGG_SSD.lua]:133_",
+		width=6.4533];
+	n10 -> n1	 [pos="e,2089,909.91 2089,945.87 2089,937.11 2089,928.39 2089,919.98"];
+	n11	 [height=1.3356,
+		label="Node11\ninput = {torch.CudaTensor[3x21x7308]}\lmodule = nn.Transpose\lreverseMap = {}",
+		pos="1742,312",
+		tooltip="[VGG_SSD.lua]:143_",
+		width=4.728];
+	n11 -> n3	 [pos="e,1790.1,227.68 1768.9,264.43 1774.1,255.38 1779.6,245.8 1785,236.5"];
+	n12	 [height=1.6303,
+		label="Node12\ninput = {torch.CudaTensor[3x512x38x38],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node18,Node25}",
+		pos="3163,2942",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.6169];
+	n12 -> n4	 [pos="e,3541,909.91 3142.4,2883.2 3080.9,2699.8 2920.1,2124.4 3197,1810 3264.8,1733 3353.3,1847.4 3425,1774 3554.7,1641.2 3511,1129.9 \
+3536,946 3537.1,937.61 3538.4,928.8 3539.6,920.08"];
+	n13	 [height=1.6303,
+		label="Node13\ninput = {torch.CudaTensor[3x1024x19x19],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node19,Node25}",
+		pos="3844,2374",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.7551];
+	n13 -> n4	 [pos="e,3625.6,909.68 3845.3,2315.2 3847.9,2186.6 3854,1866.8 3854,1599 3854,1599 3854,1599 3854,1284 3854,1130.3 3723.6,992.95 3633.4,\
+916.23"];
+	n14	 [height=1.6303,
+		label="Node14\ninput = {torch.CudaTensor[3x512x10x10],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node20,Node25}",
+		pos="3516,1986",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.6169];
+	n14 -> n4	 [pos="e,3547.3,909.97 3517.7,1927.3 3523.2,1736.2 3541,1125.3 3547,920.01"];
+	n15	 [height=1.6303,
+		label="Node15\ninput = {torch.CudaTensor[3x256x5x5],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node21,Node25}",
+		pos="3116,1598",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.3406];
+	n15 -> n4	 [pos="e,3459.8,909.49 3221.8,1542.9 3280.8,1506.8 3349.7,1453.6 3387,1386 3482,1213.9 3337,1118.6 3431,946 3436.7,935.49 3444.2,925.73 \
+3452.5,916.8"];
+	n16	 [height=1.6303,
+		label="Node16\ninput = {torch.CudaTensor[3x256x3x3],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node22,Node25}",
+		pos="3078,1285",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.3406];
+	n16 -> n4	 [pos="e,3429.8,908.99 3233.7,1234.7 3276.7,1214.1 3319.5,1185.9 3349,1148 3405.3,1075.4 3339.5,1020.7 3393,946 3401.1,934.73 3411,924.56 \
+3421.8,915.44"];
+	n17	 [height=1.6303,
+		label="Node17\ninput = {torch.CudaTensor[3x256x1x1],torch.CudaTensor[3x3x300x300]}\lmodule = nn.PriorBox\lreverseMap = {}\lmapindex = {\
+Node23,Node25}",
+		pos="3040,1047",
+		tooltip="[VGG_SSD.lua]:67_",
+		width=8.3406];
+	n17 -> n4	 [pos="e,3400.3,908.67 3175.1,994.52 3241.3,969.27 3321.5,938.7 3390.6,912.36"];
+	n18	 [height=20.486,
+		label="Node18\ninput = {torch.CudaTensor[3x3x300x300]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (\
+7) -> (8) -> (9) -> (10) -> (11) -> (12) -> (13) -> output]\l  (1): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (\
+1): cudnn.SpatialConvolution(3 -> 64, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (2): \
+nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(64 -> 64, 3x3, 1,1, 1,1)\l    (2): \
+cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (3): cudnn.SpatialMaxPooling(2x2, 2,2)\l  (4): nn.Sequential {\l    [\
+input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(64 -> 128, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (\
+3): cudnn.ReLU\l  }\l  (5): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(128 -> \
+128, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (6): cudnn.SpatialMaxPooling(2x2, 2,2)\l  (\
+7): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(128 -> 256, 3x3, 1,1, 1,1)\l    (\
+2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (8): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (\
+1): cudnn.SpatialConvolution(256 -> 256, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (\
+9): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(256 -> 256, 3x3, 1,1, 1,1)\l    (\
+2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (10): cudnn.SpatialMaxPooling(2x2, 2,2)\l  (11): nn.Sequential {\l    [\
+input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(256 -> 512, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (\
+3): cudnn.ReLU\l  }\l  (12): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(512 \
+-> 512, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (13): nn.Sequential {\l    [input \
+-> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(512 -> 512, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (\
+3): cudnn.ReLU\l  }\l}\lreverseMap = {}",
+		pos="2139,4072",
+		tooltip="[VGG_SSD.lua]:91_",
+		width=12.001];
+	n18 -> n5	 [pos="e,1374.7,3038.5 1800.3,3613.4 1645.8,3404.8 1476.5,3176 1380.9,3046.9"];
+	n18 -> n12	 [pos="e,3111.2,3000 2501.8,3671.3 2724.7,3425.9 2988.8,3134.9 3104.2,3007.8"];
+	n19	 [height=9.8799,
+		label="Node19\ninput = {torch.CudaTensor[3x512x38x38]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> (4) -> (5) -> (6) -> (\
+7) -> (8) -> output]\l  (1): cudnn.SpatialMaxPooling(2x2, 2,2)\l  (2): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (\
+1): cudnn.SpatialConvolution(512 -> 512, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (\
+3): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (1): cudnn.SpatialConvolution(512 -> 512, 3x3, 1,1, 1,1)\l    (\
+2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (4): nn.Sequential {\l    [input -> (1) -> (2) -> (3) -> output]\l    (\
+1): cudnn.SpatialConvolution(512 -> 512, 3x3, 1,1, 1,1)\l    (2): cudnn.SpatialBatchNormalization\l    (3): cudnn.ReLU\l  }\l  (\
+5): cudnn.SpatialMaxPooling(3x3, 1,1, 1,1)\l  (6): nn.SpatialDilatedConvolution(512 -> 1024, 3x3, 1,1, 6,6, 6,6)\l  (7): cudnn.ReLU\l  (\
+8): nn.Sequential {\l    [input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(1024 -> 1024, 1x1)\l    (2): cudnn.ReLU\l  }\l}\lreverseMap = {}",
+		pos="2139,2942",
+		tooltip="[VGG_SSD.lua]:104_",
+		width=7.926];
+	n18 -> n19	 [pos="e,2139,3297.8 2139,3334.4 2139,3325.5 2139,3316.7 2139,3308"];
+	n30	 [height=2.8088,
+		label="Node30\ninput = {torch.CudaTensor[3x512x38x38]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+512 -> 63, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="720,1047",
+		tooltip="[VGG_SSD.lua]:92_",
+		width=6.4533];
+	n18 -> n30	 [pos="e,754.31,1147.3 1723.8,3867.4 1495.8,3735.2 1226.7,3542.1 1062,3298 825.79,2948 837,2797.2 837,2375 837,2375 837,2375 837,1597 837,\
+1441.6 791.62,1266.8 757.38,1157.1"];
+	n19 -> n6	 [pos="e,1960.7,2473.9 2016.6,2620.4 1997.8,2571.1 1979.6,2523.4 1964.3,2483.3"];
+	n19 -> n13	 [pos="e,3592.8,2409.5 2397.6,2790.5 2528,2719.9 2690.6,2639.8 2844,2586 3087.9,2500.5 3378.1,2444 3582.8,2411.1"];
+	n20	 [height=4.8712,
+		label="Node20\ninput = {torch.CudaTensor[3x1024x19x19]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> output]\l  (1): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(1024 -> 256, 1x1)\l    (2): cudnn.ReLU\l  }\l  (2): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(256 -> 512, 3x3, 2,2, 1,1)\l    (2): cudnn.ReLU\l  }\l}\lreverseMap = {}",
+		pos="2422,2374",
+		tooltip="[VGG_SSD.lua]:111_",
+		width=6.7534];
+	n19 -> n20	 [pos="e,2339.9,2539.2 2289.6,2639.8 2305.3,2608.4 2320.8,2577.4 2335.4,2548.2"];
+	n31	 [height=2.8088,
+		label="Node31\ninput = {torch.CudaTensor[3x1024x19x19]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+1024 -> 126, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1425,2374",
+		tooltip="[VGG_SSD.lua]:105_",
+		width=6.7297];
+	n19 -> n31	 [pos="e,1537.3,2464 1898.3,2750.2 1779.5,2656.1 1641.6,2546.7 1545.3,2470.4"];
+	n20 -> n7	 [pos="e,2470.9,2087.1 2451.6,2199.8 2457.6,2164.9 2463.7,2129.3 2469.1,2097.3"];
+	n20 -> n14	 [pos="e,3371.5,2038 2640.1,2296 2853.6,2220.7 3173.5,2107.8 3361.8,2041.4"];
+	n21	 [height=4.8712,
+		label="Node21\ninput = {torch.CudaTensor[3x512x10x10]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> output]\l  (1): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(512 -> 128, 1x1)\l    (2): cudnn.ReLU\l  }\l  (2): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(128 -> 256, 3x3, 2,2, 1,1)\l    (2): cudnn.ReLU\l  }\l}\lreverseMap = {}",
+		pos="1994,1986",
+		tooltip="[VGG_SSD.lua]:118_",
+		width=6.7534];
+	n20 -> n21	 [pos="e,2145.5,2123.6 2270.8,2236.6 2232.7,2202.3 2191.7,2165.3 2153.2,2130.5"];
+	n32	 [height=2.8088,
+		label="Node32\ninput = {torch.CudaTensor[3x512x10x10]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+512 -> 126, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1477,1986",
+		tooltip="[VGG_SSD.lua]:112_",
+		width=6.5915];
+	n20 -> n32	 [pos="e,1585.2,2076.2 2260,2243.1 2231.1,2225.2 2200.2,2209.2 2169,2198 1989.7,2133.7 1921.9,2224.4 1742,2162 1689.6,2143.8 1637.5,2113 \
+1593.6,2082.1"];
+	n21 -> n8	 [pos="e,1958.4,1699 1972.4,1811.2 1968.1,1776.5 1963.7,1741 1959.7,1709.2"];
+	n21 -> n15	 [pos="e,3011,1653.1 2155.6,1854.8 2184.3,1837 2215,1821.1 2246,1810 2433.2,1743 2498.6,1820.5 2692,1774 2801,1747.8 2918.3,1697.5 3001.8,\
+1657.6"];
+	n22	 [height=4.8712,
+		label="Node22\ninput = {torch.CudaTensor[3x256x5x5]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> output]\l  (1): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(256 -> 128, 1x1)\l    (2): cudnn.ReLU\l  }\l  (2): nn.Sequential {\l    [\
+input -> (1) -> (2) -> output]\l    (1): cudnn.SpatialConvolution(128 -> 256, 3x3, 2,2, 1,1)\l    (2): cudnn.ReLU\l  }\l}\lreverseMap = {}",
+		pos="2440,1598",
+		tooltip="[VGG_SSD.lua]:125_",
+		width=6.7534];
+	n21 -> n22	 [pos="e,2285,1733.2 2149.1,1850.8 2190.5,1814.9 2235.4,1776.1 2277.2,1739.9"];
+	n33	 [height=2.8088,
+		label="Node33\ninput = {torch.CudaTensor[3x256x5x5]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 126, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1458,1598",
+		tooltip="[VGG_SSD.lua]:119_",
+		width=6.5915];
+	n21 -> n33	 [pos="e,1578.1,1685.5 1822.6,1861.5 1746,1806.4 1657.4,1742.6 1586.7,1691.7"];
+	n22 -> n9	 [pos="e,2446.8,1386.2 2445.6,1422.4 2445.9,1413.6 2446.2,1405 2446.4,1396.5"];
+	n22 -> n16	 [pos="e,2955.1,1338.6 2634.4,1492.2 2679.6,1468.5 2727.8,1443.9 2773,1422 2829.1,1394.8 2891.9,1366.4 2945.8,1342.7"];
+	n23	 [height=2.2195,
+		label="Node23\ninput = {torch.CudaTensor[3x256x3x3]}\lmodule = nn.Sequential {\l  [input -> (1) -> output]\l  (1): nn.SpatialAveragePooling(\
+3x3, 1,1)\l}\lreverseMap = {}",
+		pos="2027,1285",
+		tooltip="[VGG_SSD.lua]:131_",
+		width=4.7852];
+	n22 -> n23	 [pos="e,2116.6,1353.5 2272.3,1470.7 2222.1,1432.9 2168.8,1392.8 2124.7,1359.6"];
+	n34	 [height=2.8088,
+		label="Node34\ninput = {torch.CudaTensor[3x256x3x3]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 126, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1599,1285",
+		tooltip="[VGG_SSD.lua]:126_",
+		width=6.5915];
+	n22 -> n34	 [pos="e,1760.6,1359.2 2277.5,1467.4 2248.6,1449.6 2217.9,1433.5 2187,1422 2043.7,1368.9 1993.3,1423.1 1845,1386 1820.3,1379.8 1794.8,1371.6 \
+1770.1,1362.6"];
+	n23 -> n10	 [pos="e,2062.8,1147.7 2047.6,1205.4 2051.7,1190.1 2056,1173.8 2060.2,1157.6"];
+	n23 -> n17	 [pos="e,2789.4,1079.4 2128,1220.3 2153.4,1206.5 2181,1193.3 2208,1184 2311,1148.3 2576,1108.1 2779.4,1080.7"];
+	n35	 [height=2.8088,
+		label="Node35\ninput = {torch.CudaTensor[3x256x1x1]}\lmodule = nn.Sequential {\l  [input -> (1) -> (2) -> (3) -> output]\l  (1): cudnn.SpatialConvolution(\
+256 -> 126, 3x3, 1,1, 1,1)\l  (2): nn.Transpose\l  (3): nn.View(-1)\l}\lreverseMap = {}",
+		pos="1600,1047",
+		tooltip="[VGG_SSD.lua]:132_",
+		width=6.5915];
+	n23 -> n35	 [pos="e,1744,1127.6 1917.3,1223.4 1867.3,1195.8 1807.3,1162.6 1753,1132.6"];
+	n24	 [height=1.3356,
+		label="Node24\ninput = {torch.CudaTensor[3x21x7308]}\lmodule = cudnn.SpatialLogSoftMax\lreverseMap = {}",
+		pos="1667,444",
+		tooltip="[VGG_SSD.lua]:142_",
+		width=4.728];
+	n24 -> n11	 [pos="e,1715.1,359.68 1693.9,396.43 1699.1,387.38 1704.6,377.8 1710,368.5"];
+	n25	 [height=1.3356,
+		label="Node25\ninput = {torch.CudaTensor[3x3x300x300]}\lmodule = nn.Identity\lreverseMap = {}",
+		pos="2825,4894",
+		tooltip="[VGG_SSD.lua]:14_",
+		width=4.9806];
+	n25 -> n12	 [pos="e,3152.9,3001 2833.2,4845.8 2878.4,4584.8 3097.6,3320.1 3151.2,3011.2"];
+	n25 -> n13	 [pos="e,3858.3,2433 2999.9,4883 3192.2,4870.3 3478.9,4845.6 3515,4810 4199.2,4135.7 3934.3,2763.7 3860.6,2443.1"];
+	n25 -> n14	 [pos="e,3516.8,2044.7 2925.6,4854 2946.1,4842.4 2966,4827.8 2981,4810 3437.5,4269 3360.2,3995.4 3482,3298 3524.3,3055.6 3519.4,2287.8 \
+3516.9,2054.8"];
+	n25 -> n15	 [pos="e,3078,1656.4 2825,4845.9 2825,4628.6 2825,3702.6 2825,2943 2825,2943 2825,2943 2825,2373 2825,2095.1 2991.3,1795 3072.5,1665.1"];
+	n25 -> n16	 [pos="e,2913.1,1334.1 2822.5,4845.6 2821.9,4834 2821.4,4821.5 2821,4810 2793.5,3980.5 2787,3772.9 2787,2943 2787,2943 2787,2943 2787,1985 \
+2787,1859.8 2738.4,1527.4 2806,1422 2829.3,1385.7 2865.4,1358.7 2903.8,1338.8"];
+	n25 -> n17	 [pos="e,2875.8,1096.2 2797.4,4846.1 2791.9,4834.6 2787,4822.2 2784,4810 2587.7,4003.6 2749,3772.9 2749,2943 2749,2943 2749,2943 2749,1597 \
+2749,1505.1 2717.9,1261 2768,1184 2791.6,1147.7 2827.9,1120.8 2866.5,1100.8"];
+	n25 -> n18	 [pos="e,2482.6,4519.3 2773.3,4847.7 2760.4,4835.8 2746.9,4822.7 2735,4810 2652,4721.4 2567.4,4622.7 2488.9,4527.1"];
+	n26	 [height=1.3356,
+		label="Node26\ninput = {torch.CudaTensor[3x7308x21]}\lmodule = nn.Transpose\lreverseMap = {}",
+		pos="1593,576",
+		tooltip="[VGG_SSD.lua]:141_",
+		width=4.728];
+	n26 -> n24	 [pos="e,1640.4,491.68 1619.5,528.43 1624.7,519.38 1630.1,509.8 1635.4,500.5"];
+	n27	 [height=1.041,
+		label="Node27\ninput = {torch.CudaTensor[3x3x300x300]}\lreverseMap = {}",
+		pos="2825,5016",
+		tooltip="[[C]]:-1_",
+		width=4.9806];
+	n27 -> n25	 [pos="e,2825,4942.5 2825,4978.3 2825,4970.2 2825,4961.4 2825,4952.7"];
+	n28	 [height=1.3356,
+		label="Node28\ninput = {torch.CudaTensor[3x153468]}\lmodule = nn.View(-1, 21)\lreverseMap = {}",
+		pos="997,708",
+		tooltip="[VGG_SSD.lua]:140_",
+		width=4.5898];
+	n28 -> n26	 [pos="e,1459.9,606.02 1127.8,678.47 1223,657.7 1352,629.57 1450,608.2"];
+	n29	 [height=1.6303,
+		label="Node29\ninput = {torch.CudaTensor[3x90972],torch.CudaTensor[3x45486],torch.CudaTensor[3x12600],torch.CudaTensor[3x3150],torch.CudaTensor[\
+3x1134],torch.CudaTensor[3x126]}\lmodule = nn.JoinTable\lreverseMap = {}\lmapindex = {Node30,Node31,Node32,Node33,Node34,Node35}",
+		pos="698,851",
+		tooltip="[VGG_SSD.lua]:137_",
+		width=19.398];
+	n29 -> n28	 [pos="e,911.62,749.26 818.75,793.06 846.59,779.93 875.81,766.15 902.35,753.63"];
+	n30 -> n29	 [pos="e,704.57,909.91 708.65,945.87 707.65,937.11 706.66,928.39 705.71,919.98"];
+	n31 -> n29	 [pos="e,918.06,906.89 1297,2288.1 1252.8,2253.5 1206.4,2210.2 1174,2162 1027.2,1943.8 992,1862 992,1599 992,1599 992,1599 992,1284 992,\
+1208.6 1007.2,1005.6 961,946 951.1,933.23 939.31,922.19 926.31,912.64"];
+	n32 -> n29	 [pos="e,956.1,905.54 1341.4,1902.8 1294.2,1868.3 1244.7,1824.3 1211,1774 1050.9,1534.6 1103.6,1429.7 1044,1148 1025.1,1058.6 1066.9,1014.1 \
+1006,946 993.89,932.47 979.89,920.86 964.68,910.9"];
+	n33 -> n29	 [pos="e,962.94,905.33 1357.5,1506 1271,1421.8 1149.8,1288.6 1083,1148 1043.8,1065.4 1106.2,1013 1044,946 1031.2,932.19 1005.1,919.66 972.71,\
+908.57"];
+	n34 -> n29	 [pos="e,974.03,904.98 1450.4,1206.2 1417.8,1187.9 1383.8,1167.9 1353,1148 1227.1,1066.7 1218.5,1010 1083,946 1051.7,931.24 1017.9,918.65 \
+983.68,907.95"];
+	n35 -> n29	 [pos="e,948.5,905.88 1389.1,1000.6 1260.5,972.97 1095,937.39 958.29,907.98"];
+}
