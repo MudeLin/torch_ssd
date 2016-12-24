@@ -18,6 +18,22 @@ function DecodeBBox(prior_bbox, prior_variance, loc_regress_value)
 	decoded_bbox[4] = decode_center_y + decode_height / 2.0
 	return decoded_bbox
 end
+function DecodeBatchBBox(batch_prior_bbox, batch_prior_variance, batch_loc_regress_value)
+	assert(batch_loc_regress_value:size(1) == batch_prior_bbox:size(1) and 
+			batch_prior_bbox:size(1)       == batch_prior_variance:size(1))
+	
+	local N = batch_loc_regress_value:size(1)
+	local batch_decoded_bbox = torch.FloatTensor(N,4)
+	timer = torch.Timer() -- the Timer starts to count now
+	for n = 1, N do
+		batch_decoded_bbox[{n,{}}] = DecodeBBox(batch_prior_bbox[n], batch_prior_variance[n], batch_loc_regress_value[n])
+		print('Decode Time elapsed: ' .. timer:time().real .. ' seconds')
+	end
+
+	return batch_decoded_bbox
+end
+
+
 -- return the local regression value
 function EncodeBBox(prior_bbox, prior_variance, gt_bbox)
 	local prior_width = prior_bbox[3] - prior_bbox[1]
@@ -68,7 +84,14 @@ end
 function ApplyNMSFast(bboxes, scores, score_threshold, nms_threshold, top_k)
 	assert(bboxes:size(1) == scores:size(1), 'Scores and bbox number not matched' )
 	top_k = top_k or scores:size(1)
-	local top_scores, top_indices = torch.topk(scores, top_k, 1, true, true)
+	local top_scores, top_indices
+	if top_k > scores:size(1) then
+		top_k = scores:size(1)
+		top_scores, top_indices = torch.topk(scores, top_k, 1, true)
+	else
+		top_scores, top_indices = torch.topk(scores, top_k, 1, true, true)
+	end
+	
 	-- Do nms.
 	local bbox_indices = {}
 	for top_ind = 1, top_indices:size(1) do
@@ -103,11 +126,11 @@ function VisualizeBBox(bboxes, img)
 	local res_img = img
 
 	for k = 1, 5 do
-		print(bboxes[k][1]*width)
-		print(bboxes[k][3]*height)
-		print(bboxes[k][2]*width)
-		print(bboxes[k][4]*height)
-		print('next')
+		-- print(bboxes[k][1]*width)
+		-- print(bboxes[k][3]*height)
+		-- print(bboxes[k][2]*width)
+		-- print(bboxes[k][4]*height)
+		-- print('next')
 		res_img = image.drawRect(res_img, bboxes[k][1]*width,bboxes[k][2]*height,bboxes[k][3]*width,bboxes[k][4]*height,  {lineWidth = 1, color = {255, 0, 255}})
 	end
 	return res_img
@@ -128,21 +151,21 @@ end
 -- print(decoded_bbox)
 
 -- Test nms
-bboxes = torch.randn(100000,4)
-bboxes[torch.gt(bboxes,1.0)] = 0.99
-bboxes[torch.lt(bboxes,0.0)] = 0.01
+-- bboxes = torch.randn(100000,4)
+-- bboxes[torch.gt(bboxes,1.0)] = 0.99
+-- bboxes[torch.lt(bboxes,0.0)] = 0.01
 
-scores = torch.randn(100000)
-score_threshold = 0.2
-nms_threshold = 0.45
-top_k = 300
-local bbox_indices = ApplyNMSFast(bboxes,scores, score_threshold, nms_threshold, top_k)
+-- scores = torch.randn(100000)
+-- score_threshold = 0.2
+-- nms_threshold = 0.45
+-- top_k = 300
+-- local bbox_indices = ApplyNMSFast(bboxes,scores, score_threshold, nms_threshold, top_k)
 
-vis_bboxes = torch.FloatTensor(#bbox_indices, 4)
+-- vis_bboxes = torch.FloatTensor(#bbox_indices, 4)
 
-for k = 1, #bbox_indices do 
-	vis_bboxes[{k,{}}] =  bboxes[{bbox_indices[k],{}}]
-end
-local img = torch.FloatTensor(3,368,368)
-local res_img = VisualizeBBox(vis_bboxes,img)
-image.display(res_img)
+-- for k = 1, #bbox_indices do 
+-- 	vis_bboxes[{k,{}}] =  bboxes[{bbox_indices[k],{}}]
+-- end
+-- local img = torch.FloatTensor(3,368,368)
+-- local res_img = VisualizeBBox(vis_bboxes,img)
+-- image.display(res_img)

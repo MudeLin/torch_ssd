@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/geek/centos-home/geek/codes/torch_set/torch_ssd/src/detectutil
+CMAKE_SOURCE_DIR = /home/geek/code/torch_set/torch_ssd/src/detectutil
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/geek/centos-home/geek/codes/torch_set/torch_ssd/src/detectutil/build.luarocks
+CMAKE_BINARY_DIR = /home/geek/code/torch_set/torch_ssd/src/detectutil/build.luarocks
 
 #=============================================================================
 # Special targets to cleanup operation of make.

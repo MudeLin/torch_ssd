@@ -145,12 +145,11 @@ function buildModel(nClasses, inputRes)
 
 	-- get prior box
 	local mbox_layers = {conv4_3,fc7, conv6_2,conv7_2, conv8_2, pool6}
-
 	local prior_layers = BuildPriorLayers(mbox_layers, img_inp)
+	local mbox_prior = nn.JoinTable(3,3)(prior_layers)  -- output 1*2*(C1x4)
 
-	local mbox_prior = nn.JoinTable(3,3)(prior_layers)
-	
-	return nn.gModule({img_inp},{mbox_loc, mbox_conf_flatten, mbox_prior})
+	local detection_out = nn.DetectionOutput(21, true, 21, 0.45, 400, 200, 0.01){mbox_loc, mbox_conf_flatten, mbox_prior}
+	return nn.gModule({img_inp},{detection_out})
 end
 
 local model = buildModel(21,300):cuda()
@@ -158,8 +157,15 @@ img_inp = torch.Tensor(3,3,300,300):cuda()
 print(img_inp:size())
 out = model:forward(img_inp)
 graph.dot(model.fg, 'VGG_SSD','./model')
-print(out[1]:size())
-print(out[2]:size())
-print(out[3]:size())
+vis_bboxes = torch.Tensor(out:size(1), 4)
+for k = 1, out:size(1) do
+	vis_bboxes[{k,1}] = out[{k,4}]
+	vis_bboxes[{k,2}] = out[{k,5}]
+	vis_bboxes[{k,3}] = out[{k,6}]
+	vis_bboxes[{k,4}] = out[{k,7}]
+end
+require 'image'
+local res_img = VisualizeBBox(vis_bboxes,img_inp[1]:float())
+image.display(res_img)
 
 

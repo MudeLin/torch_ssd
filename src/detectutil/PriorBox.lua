@@ -39,7 +39,7 @@ function PriorBox:__init(min_size, max_size, aspect_ratios, flip, clip, variance
 end
 -- input[1] is feature maps
 -- input[2] is origin img data
--- output is a tensor in shape of 1x2xhxwx(K*4), 1 for all inp image, 2 means prior box and variance, 4 means x_min, y_min, x_max, y_max,
+-- output is a tensor in shape of 1*2*(hxwxKx4), 1 for all inp image, 2 means prior box and variance, 4 means x_min, y_min, x_max, y_max,
 --																		K anchors
 function PriorBox:updateOutput(input)
 	assert(#input == 2, 'input node must be two')

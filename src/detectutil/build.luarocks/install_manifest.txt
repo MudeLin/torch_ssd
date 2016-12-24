@@ -1,2 +1,4 @@
+/home/geek/torch/install/lib/luarocks/rocks/detectutil/scm-1/lua/detectutil/DetectionOutput.lua
 /home/geek/torch/install/lib/luarocks/rocks/detectutil/scm-1/lua/detectutil/init.lua
 /home/geek/torch/install/lib/luarocks/rocks/detectutil/scm-1/lua/detectutil/PriorBox.lua
+/home/geek/torch/install/lib/luarocks/rocks/detectutil/scm-1/lua/detectutil/BboxUtil.lua
